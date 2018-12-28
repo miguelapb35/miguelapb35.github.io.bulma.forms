@@ -16,18 +16,16 @@
 						<h4 class="subtitle is-4">forms with Bulma</h4>
 					</div>
 				</div>
-				<!-- 	  <div class="section">
+				<div class="section">
 					<div class="tabs is-centered">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li class="is-active"><a href="post.html">Static Post</a></li>
+							<li><a href="index.html" target="_blank">Home</a></li>
+							<li class="is-active"><a href="form.html">Form</a></li>
 							<li><a href="">Portfolio</a></li>
-							<li><a href="">Search</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="about.html">About</a></li>
+
 						</ul>
 					</div>
-				</div> -->
+				</div> 
 			</div>
 		</header>
 	</div>
@@ -195,7 +193,7 @@ Each one serves a specific purpose.
 	width at all times.
 	You can now implement the form's content 
 </p>
-
+<hr>
 <h1 class="title">
 		Implementing the form's content
 </h1>
@@ -254,8 +252,138 @@ Each one serves a specific purpose.
 	<strong>has-text-centered</strong> to center text and inline 
 	elements.
 </p>
+<hr>
+<h2>Email</h2>
+<p>
+	For the first input, use a couple of useful Bulma classes:	
+</p>
+<ul>
+	<li>
+		<p><strong>label: </strong>
+			Class for all form labels, which turns it 
+			<strong>bold</strong> and adds some space 
+			at the bottom
+	</li>
+	<li>
+		<p><strong>control: </strong>
+			This class acts as a 
+			<strong>wrapper</strong> for the input, and 
+			will allow you to enhance it withh icons.
+		</p>								
+	</li>
+</ul>
+<p>
+	After the first field, use the following HTML:
+</p>
 
 
+<xmp>
+<div class="field">
+	<label class="label">Email</label>
+	<div class="control">
+		<input class="input" type="email" placeholder="e.g alexjohnson@gmail.com" >
+	</div>
+</div>		
+</xmp>
+
+<p>
+	Although you are using HTML5 email input, decorate the 
+	input with an email icon from Fontawesome to hint 
+	at the content expected here.
+</p>
+<p>
+In order to do that with Bulma, you must first add the <strong>has-icons-left </strong>
+modifier to the control wrapper. This is a Bulma modifier that 
+adds some padding to the left of the wrapper to make 
+room for an icon
+</p>
+<xmp>
+<div class="control has-icons-left">
+	<input class="input" type="email" placeholder="e.g alexjohnson@gmail.com" >
+	<span class="icon is-small is-left">
+		<i class="fa fa-envelope"></i>
+	</span>                                    
+</div>	
+</xmp>
+
+<p>
+	<strong>Note: </strong>
+	Even if the icon loads after the page, the layout will
+	not "jump" because Bulma makes sure that the space 
+	defined by the icon is fixed.
+</p>
+<hr>
+<h1>
+	Password input
+</h1>
+<p>
+	The password input is very similar to the email icon, so you 
+	can simply duplicate the first field, and modify a few 
+	parts
+</p>
+<xmp>
+<div class="field">
+	<label class="label">Password</label>
+		<div class="control has-icons-left">
+			<input class="input" type="password" placeholder="*********" required>
+			<span class="icon is-small is-left">
+				<i class="fa fa-lock"></i>
+			</span>                                    
+		</div>
+</div>	
+</xmp>
+<p>
+	The same Bulma classes apply to this field as well
+</p>
+<hr>
+<h1>
+	Remember me checkbox
+</h1>
+<p>
+	Add a simple checkbox for the "Remember me" feature. The 
+	label element allows you to increase the click zone of the 
+	checkbox: the text "Remember me" is clickable as well.
+</p>
+<xmp>
+<div class="field">
+	<label  class="checkbox">
+		<input type="checkbox">
+		Remember me
+	</label>
+</div>
+</xmp>
+<hr>
+<h1>
+	Login button
+</h1>
+<p>
+	To complete your form, you only need a submit button.
+	Bulma provides a button class that can be used on:
+</p>
+<ul>
+		<li>
+			<p><strong>anchor tags a </strong>
+		</li>
+		<li>
+			<p><strong>button tags button </strong>
+			</p>								
+		</li>
+		<li>
+			<p><strong>input tags input type="submit" </strong>
+			</p>								
+		</li>
+	</ul>
+<p>
+	You'll want to use the button element since it's the 
+	most flexible and is a valid form element.
+</p>
+<xmp>
+<div class="field">
+	<button class="button is-success">
+		Login
+	</button>
+</div>
+</xmp>
 
 
 
