@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Forms in Bulma</title>
+	<link rel="stylesheet" href="css/bulma.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="hero-head">
+		<header>
+			<div class="container">
+				<div class="section">
+					<div class="has-text-centered">
+						<h1 class="title is-1 is-spaced">Creating and controlling</h1>
+						<h4 class="subtitle is-4">forms with Bulma</h4>
+					</div>
+				</div>
+				<!-- 	  <div class="section">
+					<div class="tabs is-centered">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="is-active"><a href="post.html">Static Post</a></li>
+							<li><a href="">Portfolio</a></li>
+							<li><a href="">Search</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="about.html">About</a></li>
+						</ul>
+					</div>
+				</div> -->
+			</div>
+		</header>
+	</div>
+	
+	<!-- Hero content: will be in the middle -->
+	<div class="hero-body">
+		<div class="container ">
+			<div class="columns is-multiline is-mobile is-centered">
+				<div class="column is-8 is-centered">
+					
+					<div class="header-content">
+						<div class="has-text-centered">
+							<h1 class="title">
+								Forms
+							</h1>
+						</div>
+					</div>
+					
+					<div class="subheader-content has-text-centered">
+						<p>posted in <a>Github</a> on <a>December 28, 2018</a> by <a>Miguel</a></p>
+						<hr/>
+					</div>
+					
+					<div class="single-content">
+						<p>
+							You create a full screen login form. This login form that you'll 
+							create will contain two form inputs (one for the email and one 
+							for the password). This will be vertically and horizontally in  a 
+							full screen 
+						<p>
+							Bulma provides a hero class: it creates a large imposing banner 
+							that is useful to showcase something in particular (in this case, the
+							login form). This hero class comes with <strong>modifiers</strong>
+							which, when combined with the base class, enable us to choose 
+							an alternative style for the "hero."
+						</p>
+						<p>
+							Inside the body tag, add the following
+								snippet:
+						</p>
+						<xmp>
+<section class="hero is-primary is-fullheight" >
+	<div class="hero-body">
+		Login
+	</div>
+</section>									
+																</xmp>
+						<p>
+							In addition to the hero class, leverage two Bulma modifiers: 
+							is-primary and is-fullheight. As stated above, modifiers "modify" the 
+							element that it's attached to. 
+							In this case, is-primary adds the default primary color (turquoise) and 
+							is-fullheight makes the section increase the height of the 
+							section to 100% of the browser's height.
+						</p>
+						<p>
+							You can now see that the whole viewport is turquiose, with 
+							"Login" written in white on the left side. The hero-body ensures 
+							that this text is <strong>vertically centered</strong>.
+
+						</p>
+						<h2>Centered layout</h2>
+						<p>
+							Before implementing the login box, be sure to first set up the 
+							<strong>layout</strong>. You want the box to be both horizontally 
+							and vertically centered:
+						</p>
+						<ul>
+							<li>
+								<p><strong>container: </strong>
+									Makes sure that the box will have a maximum
+									width, and won't reach the edges of the page 
+									on wider viewports.
+								</p>								
+							</li>
+							<li>
+								<p><strong>columns: </strong>
+									Is a wrapper for the single column
+								</p>								
+							</li>
+							<li>
+								<p><strong>column: </strong>
+									Will be horizontally centered
+								</p>								
+							</li>
+							<li>
+								<p><strong>box: </strong>
+									With its white background and shadow allows its 
+									content to be readable on this turquoise webpage.
+								</p>								
+							</li>
+						</ul>
+<xmp>
+<section class="hero is-primary is-fullheight" >
+	<div class="hero-body">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column">
+					<form action="" class="box">
+							Login
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>									
+</xmp>
+
+<p>
+	Even though you are using is-centered, the content doesn't look 
+	centered. It´s because by default, each Bulma column is automatically 
+	resized to fill the horizontal space. Since you only have one 
+	column, it takes up <strong>100%</strong> of the width.
+	Since you don't want the login box to be too wide, resize this 
+	column.
+</p>
+
+<h2>Resizing the sigle column</h2>
+<p>
+	You only need a single column, but you want that column to be 
+	<strong>centered</strong> abd <strong>responsive</strong>.
+	Luckily, Bulma provides modifiers that allow you to center columns,
+	and specify a different column size for each breakpoint.
+</p>
+<p>
+To achieve this, append the following modifiers to the form wrapper. 
+Each one serves a specific purpose.
+</p>
+<ul>
+		<li>
+			<p><strong>is-5-tablet: </strong>
+				Restricts the wrapper to be 5/12 columns wide on 
+				<strong>tablet</strong> (from 769px)
+		</li>
+		<li>
+			<p><strong>is-4-desktop: </strong>
+				Restricts the wrapper to be 4/12 columns wide on 
+				<strong>desktop</strong> (from 1024px)
+			</p>								
+		</li>
+		<li>
+			<p><strong>is-3-widescreen: </strong>
+				Restricts the wrapper to be 3/12 columns wide on 
+				<strong>widescreen</strong> monitors (from 1216px)
+			</p>								
+		</li>
+	</ul>
+<p>
+	Bulma is designed with mobile first in mind, so you don't 
+	need to add a modifier to your form wrapper. By default, it's 
+	100% of the mobile device's width.
+	Append this modifiers to the column:
+</p>
+<xmp>
+<div class="column is-5-tablet is-4-desktop is-3-widescreen">
+	<form action="" class="box">
+		Login
+	</form>
+</div>			
+		</xmp>
+<p>
+	Resize your browser to see it in action! The column takes up 
+	the whole width, up to 768px. If a higher value is reached, 
+	it resizes at each breakpoint to maintain a reasonable 
+	width at all times.
+	You can now implement the form's content 
+</p>
+
+<h1 class="title">
+		Implementing the form's content
+</h1>
+
+<p>
+	The login form will be built with four fields:
+</p>
+<ul>
+		<li>
+			<p>
+				An <strong> email  </strong> input
+			</p>
+		</li>
+		<li>
+			<p>
+				A <strong> password </strong> input
+			</p>
+		</li>
+		<li>
+			<p>
+				A <strong> "Remember me" </strong> checkbox
+			</p>
+		</li>
+		<li>
+			<p>
+				A <strong> "login" </strong> submit button
+			</p>
+		</li>
+	</ul>
+<p>
+	You will add a placeholder and a required attribute 
+	to some of the fields, which handle <strong>form errors</strong> 
+	so you can display to the user why they failed to login.
+</p>
+<h2>
+	Logo
+</h2>
+<p>
+	To reassure the user that they are indeed logging into 
+	the correct website, add a logo first.
+	Replace the "Login" text you've had so far with your 
+	first field:
+</p>
+<xmp>
+<form lass="box">
+	<div class="field has-text-centered">
+		<img src="logo-bis.jpg" alt="bulma-logo" width="167">
+	</div>
+</form>
+		
+</xmp>
+
+<p>
+	Bulma provides a <strong>field</strong>  class that allows each form field 
+	to be spaced evenly. It also comes with helper classes like 
+	<strong>has-text-centered</strong> to center text and inline 
+	elements.
+</p>
+
+
+
+
+
+					</div> <!--single-content-->
+					<div class="has-text-right">
+						<p><a class="button" href="index.html">Back to Home</a></p>
+					</div>
+				</div>
+				<!--  end of post -->
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- Hero footer: will stick at the bottom -->
+	<div class="hero-foot footer-custom">
+		<div class="container has-text-centered">
+			<hr/>
+			<a class="nav-item" href="http://github.com/plasticneko">
+				<span class="icon">
+					<i class="fa fa-github"></i>
+				</span>
+			</a>
+			<p>template by <a href="http://github.com/plasticneko">github.com/plasticneko</a></p>
+		</div>
+	</div>
+</body>
+</html>
